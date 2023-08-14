@@ -1,21 +1,13 @@
-<!doctype html>
+@extends('layout')
 
-<title>
-    Sicker Champ 
-</title>
-<link rel="stylesheet" href="/app.css">
-
-
-
-<body>
+@section('content')
     <article>
-       <h1><?= $post->title; ?></h1>
+        <h1><?= $post->title; ?></h1>
 
-       <div>
+        <div>
             {!!$post->body!!}
-       </div>
+        </div>
     </article>
 
     <a href="/">Go Back</a>
-</body>
-
+@endsection
