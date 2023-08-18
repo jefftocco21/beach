@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\Category;
 use App\Models\Post;
+use App\Models\Category;
+use illuminate\support\facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
@@ -19,8 +20,12 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
 
+    \Illuminate\support\Facades\DB::listen(function($query) {
+        logger($query->sql);
+    });
+
     return view('posts', [
-        'posts' => Post::all()
+        'posts' => Post::with('category')->get()
     ]);
 });
 
