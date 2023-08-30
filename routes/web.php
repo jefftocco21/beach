@@ -35,3 +35,20 @@ Route::post('register', [RegisterController::class, 'store'])->middleware('guest
 Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('sessions', [SessionController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+Route::get('ping', function () {
+    $mailchimp = new \MailchimpMarketing\ApiClient();
+
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchimp.key'),
+        'server' => 'us21'
+    ]);
+
+    $response = $mailchimp->lists->addListMember('b13eb00a1d', [
+        'email_address' => 'joshcadorette96@gmail.com',
+        'status' => 'subscribed'
+    
+    ]);
+ 
+    dd($response);
+});
