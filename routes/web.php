@@ -10,6 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PostCommentController;
 use PHPUnit\Framework\Attributes\PostCondition;
 
 /*
@@ -26,6 +27,7 @@ use PHPUnit\Framework\Attributes\PostCondition;
 Route::get('/', [PostController::class, 'index'])->name('home');
 
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
+Route::post('posts/{post:slug}/comments', [PostCommentController::class, 'store']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
