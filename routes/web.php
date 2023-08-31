@@ -11,6 +11,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\NewsLetterController;
 use Illuminate\validation\ValidationException;
 use App\Http\Controllers\PostCommentController;
@@ -41,5 +42,6 @@ Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('sessions', [SessionController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
 
+Route::get('admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
 Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin');
 Route::post('admin/posts', [PostController::class, 'store'])->middleware('admin');
