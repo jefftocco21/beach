@@ -18,7 +18,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="" alt="Blog Project" width="165" height="16">
+                    <img src="" alt="PHP Pizza BB!" width="165" height="16">
                 </a>
             </div>
 
@@ -59,8 +59,7 @@
 
         <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
  
-            <h5 class="text-3xl">Stay in touch with the latest posts</h5>
-            <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
+            <h5 class="text-3xl">I may update this, I may not. I will see.</h5>
 
             <div class="mt-10">
                 <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
