@@ -33,7 +33,7 @@
 
                         @admin
                         <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Dashboard</x-dropdown-item>
-                        (auth()->user()->can('admin'))
+                        {{-- (auth()->user()->can('admin')) --}}
                         <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
                         @endadmin
 
